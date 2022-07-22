@@ -1,0 +1,6 @@
+framework module RXNetworkingKit {
+  umbrella header "RXNetworkingKit.h"
+
+  export *
+  module * { export * }
+}
