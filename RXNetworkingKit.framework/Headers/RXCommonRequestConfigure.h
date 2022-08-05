@@ -17,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *tokenTimeoutCode;
 @property (nonatomic, strong) NSString *requestFailMsg;
 
++ (instancetype)sharedManger;
+
 @end
 
 NS_ASSUME_NONNULL_END
