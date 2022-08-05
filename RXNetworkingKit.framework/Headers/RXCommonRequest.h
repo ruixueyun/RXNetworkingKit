@@ -20,7 +20,7 @@ typedef NS_ENUM(NSInteger, RequestMethod) {
 @interface RXCommonRequest : NSObject
 
 @property (nonatomic, copy) NSString * apiName;
-@property (nonatomic, strong) NSDictionary * params;
+@property (nonatomic, strong) id params;
 @property (nonatomic, strong) NSData *gzipParam;
 @property (nonatomic, strong) NSDictionary * headParams;
 @property (nonatomic, assign) RequestMethod requestMethod;
@@ -32,9 +32,9 @@ typedef NS_ENUM(NSInteger, RequestMethod) {
 @property (nonatomic, assign) BOOL isGzip;
 @property (nonatomic, assign) NSInteger failedTimes; // 失败次数
 
-- (instancetype) initWithApiName:(NSString *)apiName andParams:(NSDictionary * __nullable)parmas;
+- (instancetype) initWithApiName:(NSString *)apiName andParams:(id __nullable)parmas;
 
-- (instancetype) initWithApiName:(NSString *)apiName andParams:(NSDictionary * __nullable)parmas requsetMethod:(RequestMethod)method;
+- (instancetype) initWithApiName:(NSString *)apiName andParams:(id __nullable)parmas requsetMethod:(RequestMethod)method;
 
 @end
 
