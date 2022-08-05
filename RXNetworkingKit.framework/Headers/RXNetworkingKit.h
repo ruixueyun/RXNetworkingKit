@@ -18,6 +18,5 @@ FOUNDATION_EXPORT const unsigned char RXNetworkingKitVersionString[];
 #import <RXNetworkingKit/RXCommonNetworkExcute.h>
 #import <RXNetworkingKit/RXCommonNetworkExcuteManager.h>
 #import <RXNetworkingKit/RXCommonRequest.h>
-#import <RXNetworkingKit/RXCommonRequestCache.h>
 #import <RXNetworkingKit/RXCommonRequestConfigure.h>
 #import <RXNetworkingKit/RXCommonRequestError.h>
