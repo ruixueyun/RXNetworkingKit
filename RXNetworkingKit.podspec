@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'RXNetworkingKit'
-  s.version          = '1.1.8'
+  s.version          = '1.2.0'
   s.summary          = 'ruixue RXNetworkingKit.'
 
 # This description is used to generate tags and improve searc results.
