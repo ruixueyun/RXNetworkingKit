@@ -38,7 +38,11 @@ typedef void(^RequestFailed)(RXCommonRequestError * _Nullable error);
 - (void)requestInterfaceExcuteError:(NSError *_Nullable)error
                             apiName:(NSString *_Nullable)apiName
                             apiFlag:(NSString *_Nullable)apiFlag
-                             retObj:(id _Nullable )retObj;
+                             retObj:(id _Nullable )retObj
+                            request:(RXCommonRequest *_Nullable)request
+                            success:(RequestSuccess _Nullable)success
+                            failure:(RequestFailed _Nullable )failure;
+
 
 @end
 
@@ -55,18 +59,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  初始化单例
-
- @param configure 网络请求配置对象
  @return 网络请求管理类
  */
-+ (instancetype) shareInstanceWithConfig:(RXCommonRequestConfigure *)configure;
++ (instancetype)shareInstance;
 //代理返回的请求
 /**
  普通POST GET 请求
 
  @param request 请求的URL参数信息
  */
-- (void) beginRequest:(RXCommonRequest *)request;
+- (void)beginRequest:(RXCommonRequest *)request;
 
 
 /**
@@ -76,16 +78,16 @@ NS_ASSUME_NONNULL_BEGIN
  @param success 成功返回
  @param failure 失败返回
  */
-- (void) beginRequest:(RXCommonRequest *)request
-              success:(RequestSuccess)success
-              failure:(RequestFailed)failure;
+- (void)beginRequest:(RXCommonRequest *)request
+             success:(RequestSuccess)success
+             failure:(RequestFailed)failure;
 
 /**
  多个请求
 
  @param array 数组
  */
-- (void) beginRequestWithArray:(NSArray<RXCommonRequest *> *) array;
+- (void)beginRequestWithArray:(NSArray<RXCommonRequest *> *) array;
 
 
 /**
@@ -100,14 +102,14 @@ NS_ASSUME_NONNULL_BEGIN
  @param sucess 上传成功
  @param failure 上传失败
  */
-- (void) beginUploadFileWithRequest:(RXCommonRequest *)request
-                           fileData:(NSData *)data
-                               type:(NSString *)type
-                               name:(NSString *)name
-                           mimeType:(NSString *)mimeType
-                           progress:(RequestProgress)progress
-                            success:(RequestSuccess)sucess
-                            failure:(RequestFailed)failure;
+- (void)beginUploadFileWithRequest:(RXCommonRequest *)request
+                          fileData:(NSData *)data
+                              type:(NSString *)type
+                              name:(NSString *)name
+                          mimeType:(NSString *)mimeType
+                          progress:(RequestProgress)progress
+                           success:(RequestSuccess)sucess
+                           failure:(RequestFailed)failure;
 
 
 /**
@@ -118,10 +120,10 @@ NS_ASSUME_NONNULL_BEGIN
  @param sucess 下载完成
  @param failure 下载失败
  */
-- (void) beginDownLoadWithRequest:(RXCommonRequest *)request
-                         progress:(RequestProgress)progress
-                          success:(RequestSuccess)sucess
-                          failure:(RequestFailed)failure;
+- (void)beginDownLoadWithRequest:(RXCommonRequest *)request
+                        progress:(RequestProgress)progress
+                         success:(RequestSuccess)sucess
+                         failure:(RequestFailed)failure;
 
 
 @end
